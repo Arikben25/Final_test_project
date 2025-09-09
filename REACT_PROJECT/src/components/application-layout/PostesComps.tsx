@@ -27,4 +27,3 @@ export default function PostesPage(props:ProfileCardPropsb) {
     </div>
   );
 }
-// {userName, imageUrl,  time, post}:ProfileCardProps

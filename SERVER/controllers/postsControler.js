@@ -1,4 +1,4 @@
-import { readAllPosts, costPost } from "../dal/postService.js";
+import { readAllPosts, costPost, readOnePost } from "../dal/postService.js";
 import { getTime } from "../utils/getTime.js";
 const obj = {
   userName: "arik",
@@ -22,22 +22,22 @@ export async function pullAllPosts(req, res) {
   }
 }
 
-// export async function pullOnePost(req, res) {
-//   try {
-//     const { name } = req.body;
-//     if (!name) {
-//       return res.status(400).json({ msg: "Please enter a username." });
-//     }
-//     const data = await readOnePlayer(name);
-//     if (!data || data.length === 0) {
-//       return res.status(404).json({ msg: `User ${name} not found.` });
-//     }
-//     return res.status(200).json(data);
-//   } catch (err) {
-//     console.error("err is : ", err);
-//     res.status(500).json({ msg: "Information unavailable. Try later." });
-//   }
-// }
+export async function pullOnePost(req, res) {
+  try {
+    const  key  = req.body.key
+    if (!key) {
+      return res.status(400).json({ msg: "Please enter a key." });
+    }
+    const data = await readOnePost(key);
+    if (!data || data.length === 0) {
+      return res.status(404).json({ msg: `User ${key} not found.` });
+    }
+    return res.status(200).json(data);
+  } catch (err) {
+    console.error("err is : ", err);
+    res.status(500).json({ msg: "Information unavailable. Try later." });
+  }
+}
 
 export async function addPost(req, res) {
   try {
