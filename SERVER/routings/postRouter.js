@@ -9,7 +9,3 @@ Router.post("/addPost", addPost)
 // Router.put("/updatePost")
 
 export default Router
-
-function log(){
-    console.log(`getAllPosts`);
-}
