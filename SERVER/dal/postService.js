@@ -13,6 +13,17 @@ async function readAllPosts() {
     }
 }
 
+async function readOnePost(key) {
+     try{
+       const data = await db.collection("posts").findOne({key:key})
+        console.log(data);
+        return data
+    }catch(err){
+        console.log(`your err is: ${err}`);
+        throw new Error("Could not retrieve posts from the database")   
+    }
+}
+
 // cost post to db
 async function costPost(obj){
     try{
@@ -27,6 +38,7 @@ async function costPost(obj){
 
 export{
     readAllPosts,
+    readOnePost,
     costPost
 }
 

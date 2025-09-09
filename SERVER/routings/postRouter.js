@@ -1,11 +1,15 @@
-import exports from "express"
-import {pullAllPosts ,addPost} from "../controllers/postsControler.js"
+import exports from "express";
+import {
+  pullAllPosts,
+  addPost,
+  pullOnePost,
+} from "../controllers/postsControler.js";
 
-const Router = exports.Router()
+const Router = exports.Router();
 
-Router.get("/getAllPosts" ,pullAllPosts)
-// Router.get("/getOnePost/:id")
-Router.post("/addPost", addPost)
+Router.get("/getAllPosts", pullAllPosts);
+Router.get("/getOnePost", pullOnePost);
+Router.post("/addPost", addPost);
 // Router.put("/updatePost")
 
-export default Router
+export default Router;
