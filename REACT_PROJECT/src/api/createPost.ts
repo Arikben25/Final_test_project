@@ -1,12 +1,25 @@
-export default async function getOnePost(key:string) {
-  try {
-    const res = await fetch("http://localhost:3003/posts/getOnePost", {
+
+
+type PostProp = {
+  key: string;
+  userName: string;
+  time: number;
+  imageUrl: string;
+  post: string;
+};
+
+export default async function createPost(props:PostProp) {
+    try {
+    const res = await fetch("http://localhost:3003/posts/addPost", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        key:key
+        key:props.key,
+        userName:props.userName,
+        imageUrl:props.imageUrl,
+        post:props.post
       }),
     });
     if (!res.ok) {
@@ -30,3 +43,5 @@ export default async function getOnePost(key:string) {
     return { success: false, status: 0, error: "Could not connect to server." };
   }
 }
+
+

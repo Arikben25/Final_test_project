@@ -3,6 +3,7 @@ import myImage from "../../../public/image.png";
 import "../../styles/PostesComps.css"
 
 type ProfileCardPropsb = {
+  key:number;
   userName?: string;
   time?:string;
   imageUrl?: string;
