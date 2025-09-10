@@ -30,7 +30,7 @@ export async function pullOnePost(req, res) {
     }
     const data = await readOnePost(key);
     if (!data || data.length === 0) {
-      return res.status(404).json({ msg: `User ${key} not found.` });
+      return res.status(404).json({ msg: `post ${key} not found.` });
     }
     return res.status(200).json(data);
   } catch (err) {

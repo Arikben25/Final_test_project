@@ -1,0 +1,18 @@
+#cardInputPost{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    border: 2px solid black;
+    /* margin-top: 20px; */
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

@@ -8,7 +8,7 @@ import {
 const Router = exports.Router();
 
 Router.get("/getAllPosts", pullAllPosts);
-Router.get("/getOnePost", pullOnePost);
+Router.post("/getOnePost", pullOnePost);
 Router.post("/addPost", addPost);
 // Router.put("/updatePost")
 

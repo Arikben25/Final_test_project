@@ -1,0 +1,21 @@
+#onePost {
+  margin-top: 90px;
+}
+#inputKey{
+  background-color: rgb(19, 17, 35);
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+  margin-left: 50%;
+  transform: translateX(-50%);  
+}
+
+#inputKey {
+  color: white;
+}
+
+#a{color: white;}
